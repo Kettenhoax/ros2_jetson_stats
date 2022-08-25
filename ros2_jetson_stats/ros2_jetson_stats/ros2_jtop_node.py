@@ -144,7 +144,7 @@ class JTOPPublisher(Node):
         if power:
             self.arr.status += [power_status(self.hardware, total, power)]
         # Fan controller
-        if self.jetson.fan is not None:
+        if self.jetson.fan:
             self.arr.status += [fan_status(self.hardware, self.jetson.fan, 'board')]
         # Status board and board info
         self.arr.status += [self.board_status]
